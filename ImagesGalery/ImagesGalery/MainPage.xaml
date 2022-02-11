@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImagesGalery.MainPage">
+
+    <StackLayout>
+        <StackLayout Padding="30,50" Spacing="30">
+            <Frame Padding="10" BorderColor="Black" BackgroundColor="DarkGray">
+                <Entry Placeholder="Введите название" BackgroundColor="DarkGray"/>
+            </Frame>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="35">
+                <Button Text="Галерея" x:Name="btnGalery" Clicked="btnGalery_Clicked"/>
+                <Button Text="Камера" x:Name="btnCamera" Clicked="btnCamera_Clicked"/>
+            </StackLayout>
+            <Button Text="Добавить" x:Name="btnAdd" Clicked="btnAdd_Clicked"/>
+        </StackLayout>
+        <!--<Image x:Name="img" />-->
+
+
+       <!-- <ListView
+            x:Name="imgList"
+            HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Image Source="{Binding}" />
+                            <Label Text="{Binding}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView> -->
+    </StackLayout>
+
+</ContentPage>
