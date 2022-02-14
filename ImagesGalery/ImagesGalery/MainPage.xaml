@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ImagesGalery.MainPage">
+             x:Class="ImagesGalery.MainPage"
+             NavigationPage.HasNavigationBar="False">
 
     <StackLayout>
         <StackLayout Padding="30,50" Spacing="30">
             <Frame Padding="10" BorderColor="Black" BackgroundColor="DarkGray">
-                <Entry Placeholder="Введите название" BackgroundColor="DarkGray"/>
+                <Entry Placeholder="Введите название" BackgroundColor="DarkGray" x:Name="entryName"/>
             </Frame>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="35">
                 <Button Text="Галерея" x:Name="btnGalery" Clicked="btnGalery_Clicked"/>
@@ -15,6 +16,25 @@
             <Button Text="Добавить" x:Name="btnAdd" Clicked="btnAdd_Clicked"/>
         </StackLayout>
         <!--<Image x:Name="img" />-->
+        <StackLayout>
+            <ListView
+                x:Name="imgList"
+                HasUnevenRows="True"
+                RowHeight="1"
+                ItemSelected="imgList_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame BorderColor="Black" Padding="10">
+                                    <Label  Text="{Binding Name}"></Label>
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
 
 
        <!-- <ListView
